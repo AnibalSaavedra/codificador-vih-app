@@ -56,13 +56,17 @@ def exportar_pdf(data):
     pdf.output(nombre_archivo)
     return nombre_archivo
 
+# VARIABLES TEMPORALES PARA EL PDF
+pdf_path = None
+datos = {}
+
 # Formulario
 with st.form("formulario_vih"):
     nombre = st.text_input("Nombre completo (nombre + apellidos)")
     rut = st.text_input("RUT (sin puntos, con guión)")
     fecha_nac = st.text_input("Fecha de nacimiento (dd/mm/aaaa)")
     fecha_atencion = st.text_input("Fecha de atención", value=datetime.datetime.today().strftime("%d/%m/%Y"))
-    submitted = st.form_submit_button("Generar Código y PDF")
+    submitted = st.form_submit_button("Generar Código")
 
     if submitted:
         if not all([nombre, rut, fecha_nac]):
@@ -79,6 +83,9 @@ with st.form("formulario_vih"):
                     "Código VIH": codigo
                 }
                 pdf_path = exportar_pdf(datos)
-                with open(pdf_path, "rb") as file:
-                    st.success(f"Código VIH generado: **{codigo}**")
-                    st.download_button("📄 Descargar PDF", file, file_name=pdf_path, mime="application/pdf")
+                st.success(f"Código VIH generado: **{codigo}**")
+
+# Botón de descarga FUERA del formulario
+if pdf_path:
+    with open(pdf_path, "rb") as file:
+        st.download_button("📄 Descargar PDF", file, file_name=pdf_path, mime="application/pdf")
