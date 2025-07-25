@@ -1,0 +1,14 @@
+
+LICENCIA DE USO RESTRINGIDO
+
+Este software, denominado "Codificador VIH - MINSAL", ha sido desarrollado por Aníbal Saavedra Pizarro.
+
+Todos los derechos reservados.
+
+Este programa se proporciona únicamente para uso interno en contextos clínicos y de laboratorio autorizados por su autor. No se permite la copia, modificación, distribución o uso comercial sin autorización expresa y por escrito de Aníbal Saavedra Pizarro.
+
+Cualquier uso no autorizado se considerará una infracción de los derechos de autor y estará sujeto a acciones legales conforme a la legislación vigente.
+
+Contacto: anibal.saavedra@crb.clinicasdelcobre.cl
+
+Fecha de licencia: Julio 2025
